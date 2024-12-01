@@ -16,7 +16,7 @@ Re design Spotify template with HTML , CSS , Bootstrap CSS , JS.
     <br />
     demo link:
     <a
-      href="https://aliakbar-nazemi.github.io/Spotify/"
+      href="https://aliakbarnazemi-web.github.io/Spotify/"
       target="_blank"
       style="width: fit-content; padding: 10px; background-color: #a8cd89"
       >Demo</a
