@@ -24,95 +24,95 @@ btnmenu2.addEventListener('click', () => {
 // End Menu
 
 // Start Music Player
-const audioPlayer = document.getElementById('audio-player');
-const playBtn = document.getElementById('play-btn');
-const pauseBtn = document.getElementById('pause-btn');
-const prevBtn = document.getElementById('prev-btn');
-const nextBtn = document.getElementById('next-btn');
-const $play = document.getElementsByClassName('play')
-const volume = document.getElementById("volume");
-const range = document.getElementById("range");
-const volbtn = document.getElementById("vol-btn");
 
-volume.classList.add('d-none')
+// const audioPlayer = document.getElementById('audio-player');
+// const playBtn = document.getElementById('play-btn');
+// const pauseBtn = document.getElementById('pause-btn');
+// const prevBtn = document.getElementById('prev-btn');
+// const nextBtn = document.getElementById('next-btn');
+// const $play = document.getElementsByClassName('play')
+// const volume = document.getElementById("volume");
+// const range = document.getElementById("range");
+// const volbtn = document.getElementById("vol-btn");
 
-volbtn.addEventListener('click', () => {
-    volume.classList.add('d-block')
-    volume.classList.remove('d-none')
-});
+// volume.classList.add('d-none')
 
-
-volume.addEventListener("change", () => {
-    audioPlayer.volume = volume.value / 100;
-});
-
-range.addEventListener("change", () => {
-    audioPlayer.currentTime = range.value;
-});
-
-const musicFiles = [
-    'assets/Khooneh.mp3',
-    'assets/TM Bax - Meydoon.mp3',
-];
-
-let currentIndex = 0;
-pauseBtn.style.display = 'none';
+// volbtn.addEventListener('click', () => {
+//     volume.classList.add('d-block')
+//     volume.classList.remove('d-none')
+// });
 
 
-function playMusic() {
-    audioPlayer.play();
-    playBtn.disabled = true;
-    pauseBtn.disabled = false;
-    pauseBtn.style.display = 'block';
-    playBtn.style.display = 'none';
-}
+// volume.addEventListener("change", () => {
+//     audioPlayer.volume = volume.value / 100;
+// });
 
-function pauseMusic() {
-    audioPlayer.pause();
-    playBtn.disabled = false;
-    pauseBtn.disabled = true;
-    playBtn.style.display = 'block';
-    pauseBtn.style.display = 'none';
-}
+// range.addEventListener("change", () => {
+//     audioPlayer.currentTime = range.value;
+// });
 
-function stopMusic() {
-    audioPlayer.pause();
-    audioPlayer.currentTime = 0;
-    playBtn.disabled = false;
-    pauseBtn.disabled = true;
-    playBtn.style.display = 'block';
-    pauseBtn.style.display = 'none';
-}
+// const musicFiles = [
+//     'assets/Khooneh.mp3',
+//     'assets/TM Bax - Meydoon.mp3',
+// ];
 
-function skipToPrevious() {
-    stopMusic();
-    currentIndex--;
-    if (currentIndex < 0) {
-        currentIndex = musicFiles.length - 1;
-    }
-    audioPlayer.src = musicFiles[currentIndex];
-    playMusic();
-}
-
-function skipToNext() {
-    stopMusic();
-    currentIndex++;
-    if (currentIndex >= musicFiles.length) {
-        currentIndex = 0;
-    }
-    audioPlayer.src = musicFiles[currentIndex];
-    playMusic();
-}
+// let currentIndex = 0;
+// pauseBtn.style.display = 'none';
 
 
-setInterval(range.value = audioPlayer.currentTime, 1000)
+// function playMusic() {
+//     audioPlayer.play();
+//     playBtn.disabled = true;
+//     pauseBtn.disabled = false;
+//     pauseBtn.style.display = 'block';
+//     playBtn.style.display = 'none';
+// }
 
-// Attach event listeners to the buttons
-playBtn.addEventListener('click', playMusic);
-pauseBtn.addEventListener('click', pauseMusic);
-prevBtn.addEventListener('click', skipToPrevious);
-nextBtn.addEventListener('click', skipToNext);
+// function pauseMusic() {
+//     audioPlayer.pause();
+//     playBtn.disabled = false;
+//     pauseBtn.disabled = true;
+//     playBtn.style.display = 'block';
+//     pauseBtn.style.display = 'none';
+// }
 
-// Set the initial music source
-audioPlayer.src = musicFiles[currentIndex];
+// function stopMusic() {
+//     audioPlayer.pause();
+//     audioPlayer.currentTime = 0;
+//     playBtn.disabled = false;
+//     pauseBtn.disabled = true;
+//     playBtn.style.display = 'block';
+//     pauseBtn.style.display = 'none';
+// }
+
+// function skipToPrevious() {
+//     stopMusic();
+//     currentIndex--;
+//     if (currentIndex < 0) {
+//         currentIndex = musicFiles.length - 1;
+//     }
+//     audioPlayer.src = musicFiles[currentIndex];
+//     playMusic();
+// }
+
+// function skipToNext() {
+//     stopMusic();
+//     currentIndex++;
+//     if (currentIndex >= musicFiles.length) {
+//         currentIndex = 0;
+//     }
+//     audioPlayer.src = musicFiles[currentIndex];
+//     playMusic();
+// }
+
+
+// setInterval(range.value = audioPlayer.currentTime, 1000)
+
+// playBtn.addEventListener('click', playMusic);
+// pauseBtn.addEventListener('click', pauseMusic);
+// prevBtn.addEventListener('click', skipToPrevious);
+// nextBtn.addEventListener('click', skipToNext);
+
+// audioPlayer.src = musicFiles[currentIndex];
+
 // End Music Player
